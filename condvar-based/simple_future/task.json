@@ -1,0 +1,25 @@
+{
+  "tests": [
+    {
+      "targets": ["unit_tests"],
+      "profiles": ["Debug"]
+    },
+    {
+      "targets": ["stress_tests"],
+      "profiles": ["Debug", "FaultyFibers", "FaultyThreadsASan", "FaultyThreadsTSan"]
+    },
+    {
+      "targets": ["traits_tests"],
+      "profiles": ["Debug"]
+    }
+  ],	  
+  "lint_files": ["futures"],
+  "submit_files": ["futures"],
+  "forbidden_patterns": [
+    "std::future",
+    "new",
+    "yield",
+    "sleep_for",
+    "SpinWait"
+  ]
+}

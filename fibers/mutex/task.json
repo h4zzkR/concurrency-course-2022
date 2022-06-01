@@ -1,0 +1,79 @@
+{
+  "tests": [
+    {
+      "targets": ["thread_pool_unit_tests"],
+      "profiles": ["Debug"]
+    },
+    {
+      "targets": ["thread_pool_stress_tests"],
+      "profiles": [
+        "Debug",
+        "FaultyFibers",
+        "FaultyThreadsASan",
+        "FaultyThreadsTSan"
+      ]
+    },
+    {
+      "targets": ["coroutine_tests"],
+      "profiles": [
+        "Debug",
+        "DebugASan"
+      ]
+    },
+    {
+      "targets": ["fibers_core_tests"],
+      "profiles": [
+        "Debug",
+        "FaultyThreadsASan",
+        "FaultyThreadsTSan"
+      ]
+    },
+    {
+      "targets": ["fibers_racy_tests"],
+      "profiles": ["Debug"]
+    },
+    {
+      "targets": ["fibers_mutex_unit_tests"],
+      "profiles": ["Debug", "DebugASan"]
+    },
+    {
+      "targets": ["fibers_mutex_stress_tests"],
+      "profiles": [
+        "FaultyFibers",
+        "FaultyThreadsASan",
+        "FaultyThreadsTSan"
+      ]
+    },
+    {
+      "targets": ["fibers_condvar_unit_tests"],
+      "profiles": ["Debug", "DebugASan"]
+    },
+    {
+      "targets": ["fibers_condvar_stress_tests"],
+      "profiles": [
+        "FaultyFibers",
+        "FaultyThreadsASan",
+        "FaultyThreadsTSan"
+      ]
+    },
+    {
+      "targets": ["fibers_wait_group_unit_tests"],
+      "profiles": ["Debug", "DebugASan"]
+    },
+    {
+      "targets": ["fibers_wait_group_stress_tests"],
+      "profiles": [
+        "FaultyFibers",
+        "FaultyFibersASan",
+        "FaultyThreadsASan",
+        "FaultyThreadsTSan"
+      ]
+    }
+  ],
+  "lint_files": ["exe"],
+  "submit_files": ["exe"],
+  "forbidden_patterns": [
+    "shared_ptr",
+    "sleep_for"
+  ]
+}
